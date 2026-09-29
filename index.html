@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Inicio de sesión</h1>
+
+    <label for="Gmail">Correo electrónico:</label>
+    <input type="email" id="Gmail" placeholder="Escribe tu correo">
+
+    <br><br>
+
+    <label for="Contraseña">Contraseña:</label>
+    <input type="password" id="Contraseña" placeholder="Escribe tu contraseña">
+
+    <br><br>
+
+    <label for="opcion1">Acepto los términos</label>
+    <input type="checkbox" id="opcion1">
+
+    <br>
+
+    <label for="opcion2">Quiero continuar</label>
+    <input type="checkbox" id="opcion2">
+
+    <br><br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+
+    function verificar() {
+
+        let Gmail = document.querySelector("#Gmail").value;
+        let Contraseña = document.querySelector("#Contraseña").value;
+
+        let opcion1 = document.querySelector("#opcion1").checked;
+        let opcion2 = document.querySelector("#opcion2").checked;
+
+        if (Gmail === "tomasalbornoz@gmail.com" && 
+            Contraseña === "tomi2010" && 
+            opcion1 === true && 
+            opcion2 === true) {
+
+            document.querySelector("#resultado").innerHTML =
+            "Usuario ingresado.";
+
+        } else {
+
+            document.querySelector("#resultado").innerHTML =
+            "Verifica tus datos y marca las dos opciones.";
+
+        }
+    }
+
+    </script>
+
+</body>
+</html>
+
