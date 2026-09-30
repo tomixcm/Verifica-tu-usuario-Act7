@@ -1,3 +1,7 @@
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +15,12 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-
-    color: white;
+    justify-content: center;
 
     padding: 30px;
+
+    color: white;
 
     position: relative;
 
@@ -24,36 +28,36 @@ body {
 }
 
 
-/* =================================
-   FONDO DE OFICINA
-   ================================= */
+/* ================================
+   FONDO
+================================ */
 
 body::before {
     content: "";
 
     position: fixed;
 
-    inset: -20px;
+    inset: 0;
 
     background-image:
         linear-gradient(
-            rgba(30, 30, 30, 0.60),
-            rgba(30, 30, 30, 0.60)
+            rgba(5, 15, 25, 0.70),
+            rgba(5, 15, 25, 0.80)
         ),
         url("oficina.jpg");
 
     background-size: cover;
     background-position: center;
 
-    filter: blur(7px);
+    filter: blur(3px);
 
-    transform: scale(1.05);
+    transform: scale(1.03);
 
     z-index: -2;
 }
 
 
-/* Oscurece ligeramente los bordes */
+/* Capa oscura */
 
 body::after {
     content: "";
@@ -64,9 +68,9 @@ body::after {
 
     background:
         radial-gradient(
-            circle,
-            transparent 20%,
-            rgba(0, 0, 0, 0.45) 100%
+            circle at center,
+            transparent 10%,
+            rgba(0, 0, 0, 0.65) 100%
         );
 
     z-index: -1;
@@ -75,87 +79,86 @@ body::after {
 }
 
 
-/* =================================
-   TITULO
-   ================================= */
+/* ================================
+   TÍTULO
+================================ */
 
 h1 {
-    width: 360px;
+    width: 380px;
 
     padding: 25px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     text-align: center;
 
     font-size: 30px;
 
-    font-weight: 600;
+    color: #ffffff;
 
-    color: white;
+    background: rgba(10, 25, 40, 0.88);
 
-    background: rgba(40, 40, 40, 0.72);
+    border: 1px solid rgba(80, 180, 255, 0.35);
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    border-radius: 15px 15px 5px 5px;
-
-    backdrop-filter: blur(15px);
+    border-radius: 14px;
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.45);
-}
-
-
-/* =================================
-   TEXTOS
-   ================================= */
-
-label {
-    width: 360px;
-
-    margin-bottom: 7px;
-
-    color: #eeeeee;
-
-    font-size: 14px;
-
-    font-weight: 500;
+        0 10px 35px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 140, 255, 0.08);
 
     position: relative;
 
-    z-index: 2;
+    z-index: 1;
 }
 
 
-/* =================================
-   INPUTS
-   ================================= */
+/* ================================
+   TEXTOS
+================================ */
+
+label {
+    width: 380px;
+
+    margin-bottom: 7px;
+
+    color: #dcecff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* ================================
+   CAMPOS DE TEXTO
+================================ */
 
 input[type="email"],
 input[type="password"] {
 
-    width: 360px;
+    width: 380px;
 
-    height: 48px;
+    height: 50px;
 
-    padding: 0 15px;
+    padding: 0 16px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
-    border-radius: 9px;
+    border: 1px solid #31536d;
 
-    border: 1px solid rgba(255, 255, 255, 0.20);
-
-    background: rgba(35, 35, 35, 0.70);
-
-    color: white;
+    border-radius: 8px;
 
     outline: none;
 
-    font-size: 14px;
+    background: rgba(8, 22, 35, 0.90);
 
-    backdrop-filter: blur(15px);
+    color: white;
+
+    font-size: 15px;
 
     position: relative;
 
@@ -165,59 +168,75 @@ input[type="password"] {
 }
 
 
+/* Texto del placeholder */
+
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
 
-    color: #999999;
+    color: #8da4b7;
 }
 
+
+/* Campo seleccionado */
 
 input[type="email"]:focus,
 input[type="password"]:focus {
 
-    background: rgba(50, 50, 50, 0.85);
+    border-color: #27a9ff;
 
-    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(10, 30, 48, 0.95);
 
     box-shadow:
-        0 0 0 3px rgba(255, 255, 255, 0.06);
+        0 0 0 3px rgba(39, 169, 255, 0.12),
+        0 0 15px rgba(39, 169, 255, 0.15);
 }
 
 
-/* =================================
+/* ================================
    CHECKBOX
-   ================================= */
+================================ */
 
 input[type="checkbox"] {
 
     appearance: none;
 
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
 
     margin-left: 8px;
 
+    border: 2px solid #55758d;
+
     border-radius: 4px;
 
-    border: 1px solid #777;
-
-    background: rgba(30, 30, 30, 0.75);
-
-    vertical-align: middle;
+    background: #0b1b29;
 
     cursor: pointer;
 
+    vertical-align: middle;
+
     position: relative;
+
+    z-index: 3;
+
+    transition: 0.2s;
 }
 
+
+/* Checkbox seleccionado */
 
 input[type="checkbox"]:checked {
 
-    background: #eeeeee;
+    background: #1597e5;
 
-    border-color: white;
+    border-color: #35b5ff;
+
+    box-shadow:
+        0 0 10px rgba(21, 151, 229, 0.45);
 }
 
+
+/* ✓ */
 
 input[type="checkbox"]:checked::after {
 
@@ -225,110 +244,134 @@ input[type="checkbox"]:checked::after {
 
     position: absolute;
 
-    left: 3px;
-    top: 0;
+    left: 2px;
+    top: -2px;
 
-    color: #222;
+    color: white;
 
-    font-size: 12px;
+    font-size: 14px;
 
     font-weight: bold;
 }
 
 
-/* =================================
+/* ================================
    BOTÓN
-   ================================= */
+================================ */
 
 button {
 
-    width: 360px;
+    width: 380px;
 
-    height: 48px;
+    height: 50px;
 
     margin-top: 8px;
 
     border: none;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
-    background: #eeeeee;
+    background: #1597e5;
 
-    color: #222222;
+    color: white;
 
-    font-size: 15px;
+    font-size: 16px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.25s;
-
     position: relative;
 
-    z-index: 2;
+    z-index: 10;
+
+    transition: 0.25s;
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.35);
+        0 7px 20px rgba(0, 0, 0, 0.35);
 }
 
 
+/* Al pasar el mouse */
+
 button:hover {
 
-    background: white;
+    background: #20a8f5;
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.45);
+        0 10px 25px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(21, 151, 229, 0.25);
 }
 
+
+/* Al hacer clic */
 
 button:active {
 
-    transform: translateY(0);
+    transform: translateY(1px);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 
-/* =================================
+/* ================================
    RESULTADO
-   ================================= */
+================================ */
 
 #resultado {
 
-    width: 360px;
+    width: 380px;
 
-    min-height: 45px;
+    min-height: 48px;
 
     margin-top: 18px;
 
-    padding: 13px;
+    padding: 14px;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 15px;
 
-    color: #dddddd;
+    color: #dcecff;
 
-    background: rgba(30, 30, 30, 0.65);
+    background: rgba(8, 22, 35, 0.90);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    backdrop-filter: blur(12px);
+    border: 1px solid #31536d;
 
     position: relative;
 
     z-index: 2;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 
-/* =================================
-   CELULAR
-   ================================= */
+/* ================================
+   EFECTO AL PASAR POR LOS CAMPOS
+================================ */
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+
+    border-color: #42728f;
+}
+
+
+/* ================================
+   CELULARES
+================================ */
 
 @media (max-width: 500px) {
+
+    body {
+        padding: 20px;
+    }
 
     h1,
     label,
@@ -338,6 +381,10 @@ button:active {
     #resultado {
 
         width: 100%;
-        max-width: 360px;
+        max-width: 380px;
+    }
+
+    h1 {
+        font-size: 25px;
     }
 }
